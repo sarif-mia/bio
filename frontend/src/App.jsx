@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { OrbitControls, Stars } from '@react-three/drei'
-import { Header3D, Header2D } from './components/Header'
+import Header3D, { Header2D } from './components/Header'
 import { HeroSection3D, HeroSection2D } from './components/HeroSection'
 import AboutUs from './components/AboutUs'
 import TeamSection from './components/TeamSection'
