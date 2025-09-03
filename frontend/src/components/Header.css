@@ -1,0 +1,35 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  z-index: 10;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.header-nav li {
+  margin-left: 30px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+}

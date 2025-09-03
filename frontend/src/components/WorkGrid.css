@@ -1,0 +1,75 @@
+.work-section {
+  padding: 40px;
+  background-color: #000;
+}
+
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.work-header h2 {
+  font-size: 24px;
+}
+
+.work-header button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.work-header button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.work-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.work-item-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.work-item:hover .work-item-info {
+  transform: translateY(0);
+}
+
+.work-item-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+}
+
+.work-item-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #aaa;
+}
