@@ -19,7 +19,7 @@ export default function App() {
     fetch('/api/hello')
       .then(res => res.json())
       .then(data => setMessage(data.message))
-  }, []);   .catch(err => console.error('Error:', err));
+      .catch(err => console.error('Error:', err));
   }, []);
 
   return (
