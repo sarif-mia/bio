@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { api } from '../services/api'; // Import the API service
 import './Contact.css';
 
 const Contact = () => {
@@ -22,9 +23,9 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Submit form to backend API
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await api.submitContactForm(formData);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {

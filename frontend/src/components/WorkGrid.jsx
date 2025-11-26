@@ -1,60 +1,30 @@
 import React, { useEffect, useState } from 'react';
+import { api } from '../services/api'; // Import the API service
 import './WorkGrid.css';
 
-const projects = [
-  {
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    title: 'E-commerce Platform',
-    category: 'Full-Stack Development',
-    description: 'Modern e-commerce solution with React and Node.js',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    year: '2024'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    title: 'Dashboard Analytics',
-    category: 'Frontend Development',
-    description: 'Real-time analytics dashboard with data visualization',
-    technologies: ['Vue.js', 'D3.js', 'Python', 'PostgreSQL'],
-    year: '2024'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    title: 'Mobile Banking App',
-    category: 'UI/UX Design',
-    description: 'Secure and intuitive mobile banking experience',
-    technologies: ['React Native', 'TypeScript', 'AWS'],
-    year: '2023'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    title: 'API Management System',
-    category: 'Backend Development',
-    description: 'Scalable API gateway with microservices architecture',
-    technologies: ['Python', 'FastAPI', 'Docker', 'Kubernetes'],
-    year: '2023'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    title: 'AI Content Platform',
-    category: 'Full-Stack Development',
-    description: 'AI-powered content generation and management platform',
-    technologies: ['Next.js', 'OpenAI', 'Supabase', 'Vercel'],
-    year: '2024'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
-    title: 'Healthcare Management',
-    category: 'System Architecture',
-    description: 'Comprehensive healthcare management system',
-    technologies: ['Angular', 'Spring Boot', 'MySQL', 'Redis'],
-    year: '2023'
-  }
-];
-
 const WorkGrid = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const data = await api.getProjects();
+        setProjects(data.projects || []);
+      } catch (err) {
+        setError('Failed to load projects');
+        console.error('Error fetching projects:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -78,6 +48,42 @@ const WorkGrid = () => {
     // You can implement a modal or redirect to a portfolio page
     console.log('View all projects clicked');
   };
+
+  if (loading) {
+    return (
+      <section className="work-section" id="work">
+        <div className="work-container">
+          <div className="work-header">
+            <div className="section-badge">Recent work</div>
+            <h2 className="section-title">
+              My <span className="gradient-text">Projects</span>
+            </h2>
+            <p className="section-subtitle">
+              Loading projects...
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="work-section" id="work">
+        <div className="work-container">
+          <div className="work-header">
+            <div className="section-badge">Recent work</div>
+            <h2 className="section-title">
+              My <span className="gradient-text">Projects</span>
+            </h2>
+            <p className="section-subtitle">
+              {error}
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="work-section" id="work">
@@ -105,7 +111,7 @@ const WorkGrid = () => {
         <div className="work-grid">
           {projects.map((project, index) => (
             <div
-              key={index}
+              key={project.id || index}
               className={`work-item card-hover ${isVisible ? 'animate-scaleIn' : ''}`}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
