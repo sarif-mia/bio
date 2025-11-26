@@ -3,10 +3,10 @@ import './About.css';
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-content">
-        <h2>About Us</h2>
-        <p>We are a creative agency that believes in the power of ideas. We are a team of designers, developers, and strategists who are passionate about creating meaningful and impactful work. Our goal is to help our clients achieve their business objectives through creative and innovative solutions.</p>
+        <h2>About Me</h2>
+        <p>I'm a passionate full-stack developer with expertise in modern web technologies. I love creating intuitive user experiences and robust backend systems. When I'm not coding, you'll find me exploring new technologies or contributing to open-source projects.</p>
       </div>
     </section>
   );

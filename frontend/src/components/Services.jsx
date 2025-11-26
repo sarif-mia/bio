@@ -2,17 +2,17 @@ import React from 'react';
 import './Services.css';
 
 const services = [
-  { title: 'Branding', description: 'Creating memorable and impactful brand identities.' },
-  { title: 'Web Design', description: 'Designing beautiful and intuitive user experiences.' },
-  { title: 'Development', description: 'Building robust and scalable web applications.' },
-  { title: 'Marketing', description: 'Driving growth through strategic digital marketing campaigns.' },
+  { title: 'Frontend Development', description: 'Building responsive and interactive user interfaces with React, Vue.js, and modern CSS.' },
+  { title: 'Backend Development', description: 'Creating robust APIs and server-side applications using Node.js, Python, and databases.' },
+  { title: 'Full-Stack Solutions', description: 'End-to-end web development from database design to deployment and optimization.' },
+  { title: 'UI/UX Design', description: 'Designing intuitive user experiences and modern, accessible interfaces.' },
 ];
 
 const Services = () => {
   return (
-    <section className="services-section">
+    <section className="services-section" id="services">
       <div className="services-header">
-        <h2>Our Services</h2>
+        <h2>My Services</h2>
       </div>
       <div className="services-grid">
         {services.map((service, index) => (

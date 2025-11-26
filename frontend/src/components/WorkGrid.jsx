@@ -36,10 +36,10 @@ const projects = [
 
 const WorkGrid = () => {
   return (
-    <section className="work-section">
+    <section className="work-section" id="work">
       <div className="work-header">
-        <h2>Our Work</h2>
-        <button>View all work</button>
+        <h2>My Projects</h2>
+        <button>View all projects</button>
       </div>
       <div className="work-grid">
         {projects.map((project, index) => (
