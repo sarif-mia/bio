@@ -1,30 +1,27 @@
 # Frontend - Bio Portfolio (Vite + React)
 
-This is the client application built with Vite + React.
+Vite + React client application.
 
 ## Development
-Run the dev server with:
 
-```powershell
+```bash
 npm install
 npm run dev
 ```
 
-The Vite dev server runs at http://localhost:3000 by default.
+Dev server runs at http://localhost:3000
 
 ## Docker
-Build and run the frontend container:
 
-```powershell
+```bash
 docker build -t bio-frontend:latest .
 docker run -p 3000:80 bio-frontend:latest
 ```
 
-This serves the static build on port 3000 and ships built files into Nginx.
-
 ## Build
-```powershell
+
+```bash
 npm run build
 ```
 
-Built files will be in `dist/`.
+Built files are in `dist/`.

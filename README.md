@@ -1,37 +1,22 @@
 # Bio Portfolio (Vite + Flask)
 
-This repository is a full-stack project with a Vite/React frontend and a Flask backend. The project is configured to be deployed to Netlify (frontend) and Netlify Functions (backend), and this repo also contains Docker configurations to run locally using Docker and Docker Compose.
+A full-stack portfolio with Vite/React frontend and Flask backend.
 
-## Project structure
-- backend/ - Flask backend
-- frontend/ - Vite + React frontend
-- docker-compose.yml - Run frontend and backend together locally
+## Quick Start
 
-## Running with Docker
-1. Build and start containers using Docker Compose:
-
-```powershell
-# From the repo root
+```bash
+# Start with Docker
 docker compose up --build -d
+
+# Visit http://localhost:3000
 ```
 
-2. Open the frontend: http://localhost:3000
-3. API is exposed at: http://localhost:5000/api/hello
+## Project Structure
 
-## Building images manually
-```powershell
-docker build -t bio-backend:latest ./backend
-docker build -t bio-frontend:latest ./frontend
-```
+- `backend/` - Flask API
+- `frontend/` - Vite + React
+- `docker-compose.yml` - Local development setup
 
-## Pushing to GitHub
-```powershell
-# Stage, commit and push
-git add .
-git commit -m "Add Dockerfiles, docker-compose and READMEs"
-git push origin master
-```
+## Deployment
 
----
-
-If you prefer deploying to Netlify, the `netlify.toml` file is already configured to build the frontend and redirect API calls to the backend as Netlify Functions.
+Frontend and API are configured for Netlify deployment.

@@ -1,19 +1,18 @@
 # Backend - Bio Portfolio (Flask)
 
-This is a small Flask application that provides an API used by the frontend.
+Flask API for the portfolio frontend.
 
 ## Endpoints
-- GET /api/hello - Returns a simple JSON message
+
+- GET /api/hello - Simple JSON message
+- GET /api/projects - Portfolio projects
+- POST /api/contact - Contact form submission
 
 ## Docker
-Build and run the backend container:
 
-```powershell
+```bash
 docker build -t bio-backend:latest .
 docker run -p 5000:5000 bio-backend:latest
 ```
 
-The service will be available at http://localhost:5000/api/hello
-
-## Notes
-- The app is configured as a Flask application in `api/index.py` for compatibility with Netlify Functions. When containerized, Gunicorn is used to serve the app.
+Available at http://localhost:5000/api/*
