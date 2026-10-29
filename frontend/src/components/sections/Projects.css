@@ -64,17 +64,23 @@
   transform: scale(1.06);
 }
 
-.project-year {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
+.project-media img {
+  object-position: top;
+}
+
+.project-placeholder {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 50%),
+    var(--gradient);
   color: #fff;
-  font-size: 12px;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .project-body {

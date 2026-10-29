@@ -10,9 +10,11 @@ const codeLines = [
   null,
   ['key', '  role'], ['plain', ': '], ['str', `'${profile.role}'`], ['plain', ','],
   null,
-  ['key', '  stack'], ['plain', ': ['], ['str', "'React'"], ['plain', ', '], ['str', "'Node'"], ['plain', ', '], ['str', "'Python'"], ['plain', '],'],
+  ['key', '  company'], ['plain', ': '], ['str', `'${profile.company}'`], ['plain', ','],
   null,
-  ['key', '  focus'], ['plain', ': '], ['str', "'shipping great UX'"], ['plain', ','],
+  ['key', '  builds'], ['plain', ': ['], ['str', "'HRM'"], ['plain', ', '], ['str', "'ERP'"], ['plain', ', '], ['str', "'E-commerce'"], ['plain', '],'],
+  null,
+  ['key', '  based'], ['plain', ': '], ['str', "'Dhaka, BD'"], ['plain', ','],
   null,
   ['plain', '};'],
 ];
@@ -36,11 +38,11 @@ const Hero = () => (
       <div className="hero-copy">
         <span className="hero-status">
           <span className="status-dot" />
-          {profile.availability}
+          {profile.role} at {profile.company}
         </span>
         <h1 className="hero-title">
           Hi, I'm {profile.name.split(' ')[0]}.<br />
-          I build <span className="gradient-text">digital experiences</span> that matter.
+          I build <span className="gradient-text">software</span> that runs real businesses.
         </h1>
         <p className="hero-subtitle">{profile.tagline}</p>
 
@@ -81,8 +83,8 @@ const Hero = () => (
             ))}
           </pre>
         </div>
-        <div className="floating-badge badge-1"><Icon name="checkCircle" size={18} /> 99 Lighthouse</div>
-        <div className="floating-badge badge-2"><Icon name="layers" size={18} /> Full-stack</div>
+        <div className="floating-badge badge-1"><Icon name="checkCircle" size={18} /> 10 products built</div>
+        <div className="floating-badge badge-2"><Icon name="mapPin" size={18} /> Dhaka, Bangladesh</div>
       </div>
     </div>
 

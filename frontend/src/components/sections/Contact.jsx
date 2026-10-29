@@ -21,8 +21,8 @@ const validate = (values) => {
 
 const contactDetails = [
   { icon: 'mail', label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+  { icon: 'linkedin', label: 'LinkedIn', value: 'in/sarif-mia', href: 'https://www.linkedin.com/in/sarif-mia/' },
   { icon: 'mapPin', label: 'Location', value: profile.location },
-  { icon: 'clock', label: 'Response time', value: 'Within 24 hours' },
 ];
 
 const Field = ({ id, label, error, children }) => (
@@ -82,15 +82,15 @@ const Contact = () => {
           eyebrow="Contact"
           title="Let's build something"
           accent="together"
-          subtitle="Tell me a little about your project and I'll reply within a day."
+          subtitle="Have a project, a role or a question? Send a message and I'll get back to you."
         />
 
         <div className="contact-grid">
           <Reveal className="contact-info">
             <h3>Get in touch</h3>
             <p>
-              Whether you have a product to build, a team that needs an extra pair of hands, or just want to say hello —
-              my inbox is always open.
+              Whether it's business software, an e-commerce store or an IT problem that needs solving, I'm happy to
+              talk it through. You can also reach me directly by email or on LinkedIn.
             </p>
 
             <ul className="contact-details">
@@ -99,7 +99,9 @@ const Contact = () => {
                   <span className="contact-icon"><Icon name={d.icon} /></span>
                   <div>
                     <span className="contact-label">{d.label}</span>
-                    {d.href ? <a href={d.href}>{d.value}</a> : <span>{d.value}</span>}
+                    {d.href
+                      ? <a href={d.href} {...(d.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}>{d.value}</a>
+                      : <span>{d.value}</span>}
                   </div>
                 </li>
               ))}

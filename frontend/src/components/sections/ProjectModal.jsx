@@ -30,32 +30,27 @@ const ProjectModal = ({ project, onClose }) => {
           <button type="button" className="icon-btn modal-close" onClick={onClose} aria-label="Close">
             <Icon name="close" />
           </button>
-          <img src={project.image} alt="" className="modal-image" />
+          {project.image
+            ? <img src={project.image} alt={`${project.title} homepage`} className="modal-image" />
+            : <div className="modal-image project-placeholder" aria-hidden="true">{project.title}</div>}
           <div className="modal-body">
             <div className="modal-meta">
               <span className="project-category">{project.category}</span>
-              <span>{project.year}</span>
+              {project.url && <span>{new URL(project.url).hostname}</span>}
             </div>
             <h3 id="project-modal-title">{project.title}</h3>
             <p>{project.description}</p>
 
-            <h4>Tech stack</h4>
+            <h4>Highlights</h4>
             <ul className="modal-tech">
-              {project.technologies.map((t) => <li key={t} className="chip">{t}</li>)}
+              {project.tags.map((t) => <li key={t} className="chip">{t}</li>)}
             </ul>
 
-            {(project.liveUrl || project.repoUrl) && (
+            {project.url && (
               <div className="modal-actions">
-                {project.liveUrl && (
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
-                    Live site <Icon name="external" size={16} />
-                  </a>
-                )}
-                {project.repoUrl && (
-                  <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">
-                    Source <Icon name="github" size={16} />
-                  </a>
-                )}
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+                  Visit live site <Icon name="external" size={16} />
+                </a>
               </div>
             )}
           </div>

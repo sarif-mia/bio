@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-cta">
           <h2>Have a project in mind?</h2>
-          <p>Let's turn your idea into something people love to use.</p>
+          <p>Let's talk about how I can help your business.</p>
           <a href="#contact" className="btn btn-primary">
             Start a conversation <Icon name="arrowRight" size={18} />
           </a>
@@ -29,7 +29,7 @@ const Footer = () => {
               <span className="logo-mark">{profile.initials}</span>
               {profile.name}
             </a>
-            <p>{profile.role} crafting fast, accessible and thoughtfully designed web products.</p>
+            <p>{profile.role} in Dhaka building HR, ERP and e-commerce software for real businesses.</p>
           </div>
 
           <nav className="footer-col" aria-label="Footer">

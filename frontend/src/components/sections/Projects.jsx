@@ -64,8 +64,9 @@ const Projects = () => {
               <Reveal key={project.id} delay={(i % 3) * 80}>
                 <article className="project-card card">
                   <div className="project-media">
-                    <img src={project.image} alt="" loading="lazy" />
-                    <span className="project-year">{project.year}</span>
+                    {project.image
+                      ? <img src={project.image} alt="" loading="lazy" />
+                      : <span className="project-placeholder" aria-hidden="true">{project.title}</span>}
                   </div>
                   <div className="project-body">
                     <span className="project-category">{project.category}</span>
@@ -76,10 +77,7 @@ const Projects = () => {
                     </h3>
                     <p>{project.description}</p>
                     <ul className="project-tech">
-                      {project.technologies.slice(0, 3).map((t) => <li key={t} className="chip">{t}</li>)}
-                      {project.technologies.length > 3 && (
-                        <li className="chip">+{project.technologies.length - 3}</li>
-                      )}
+                      {project.tags.map((t) => <li key={t} className="chip">{t}</li>)}
                     </ul>
                   </div>
                   <span className="project-arrow" aria-hidden="true"><Icon name="arrowUpRight" /></span>

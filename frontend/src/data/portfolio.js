@@ -2,19 +2,24 @@
 
 export const profile = {
   name: 'Sarif Mia',
+  fullName: 'Mohammad Sarif Mia',
   initials: 'SM',
-  role: 'Full-Stack Developer',
-  tagline: 'I design and build fast, accessible web products — from polished interfaces to reliable APIs.',
-  location: 'Remote / Worldwide',
-  email: 'hello@example.com',
-  availability: 'Available for new projects',
+  role: 'Software Engineer',
+  company: 'NDS9 Limited',
+  tagline:
+    'Software Engineer at a multinational buying house in Dhaka. I build business software — HR & payroll SaaS, ERP systems and e-commerce platforms.',
+  location: 'Uttara, Dhaka, Bangladesh',
+  email: 'sarifmia.official@gmail.com',
+  languages: 'Bangla & English',
+  portrait: '/portrait.jpg',
   resumeUrl: null,
 };
 
 export const socials = [
+  { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/sarif-mia/' },
   { name: 'GitHub', icon: 'github', url: 'https://github.com/sarif-mia' },
-  { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/' },
-  { name: 'X / Twitter', icon: 'twitter', url: 'https://x.com/' },
+  { name: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/mohammad.sarifmia' },
+  { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/mohammad.sarifmia/' },
 ];
 
 export const navItems = [
@@ -26,120 +31,166 @@ export const navItems = [
 ];
 
 export const stats = [
-  { value: '50+', label: 'Projects shipped' },
-  { value: '3+', label: 'Years experience' },
-  { value: '25+', label: 'Happy clients' },
+  { value: '10', label: 'Products built' },
+  { value: '2021', label: 'Working in tech since' },
+  { value: 'B.Sc.', label: 'CSE, Uttara University' },
 ];
 
 export const skillGroups = [
-  { title: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Vue.js', 'CSS / Tailwind'] },
-  { title: 'Backend', items: ['Node.js', 'Python', 'Flask / FastAPI', 'REST & GraphQL'] },
-  { title: 'Data & Cloud', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'AWS'] },
-  { title: 'Practices', items: ['Accessibility', 'Testing', 'CI/CD', 'Performance'] },
+  { title: 'Business software', items: ['HR & Payroll', 'ERP', 'Attendance & Leave', 'Dashboards'] },
+  { title: 'Web products', items: ['Web applications', 'E-commerce', 'SaaS', 'Calculators & tools'] },
+  { title: 'IT operations', items: ['IT support', 'Software maintenance', 'Network management'] },
+  { title: 'Languages', items: ['Bangla', 'English'] },
 ];
 
 export const services = [
   {
     icon: 'layout',
-    title: 'Frontend Development',
-    description: 'Responsive, accessible interfaces with React and modern CSS that feel fast on every device.',
-    features: ['React & Next.js', 'Design systems', 'Performance tuning'],
-  },
-  {
-    icon: 'server',
-    title: 'Backend & APIs',
-    description: 'Robust APIs and services with clean architecture, solid data models and sensible security.',
-    features: ['REST / GraphQL APIs', 'Auth & security', 'Database design'],
+    title: 'Web Applications',
+    description: 'Custom web apps that streamline everyday business operations, from internal tools to customer-facing products.',
+    features: ['Business workflows', 'Admin dashboards', 'Reports & exports'],
   },
   {
     icon: 'layers',
-    title: 'Full-Stack Products',
-    description: 'End-to-end delivery from idea to deployment, with the tooling to keep shipping confidently.',
-    features: ['Architecture', 'CI/CD & Docker', 'Cloud deployment'],
+    title: 'HR, Payroll & ERP',
+    description: 'Multi-tenant HR and ERP systems covering attendance, payroll, leave, inventory, production and accounts.',
+    features: ['Payroll & attendance', 'Inventory & production', 'Real-time dashboards'],
   },
   {
-    icon: 'pen',
-    title: 'UI/UX Design',
-    description: 'Wireframes and prototypes grounded in user needs, handed off as production-ready components.',
-    features: ['User flows', 'Prototyping', 'Accessibility audits'],
+    icon: 'cart',
+    title: 'E-commerce',
+    description: 'Online stores for fashion and beauty brands with clean product browsing and smooth checkout.',
+    features: ['Storefront design', 'Product catalogues', 'Worldwide shipping flows'],
+  },
+  {
+    icon: 'server',
+    title: 'IT Solutions & Support',
+    description: 'Keeping business systems running — software maintenance, IT support and network management.',
+    features: ['Software maintenance', 'IT support', 'Network management'],
   },
 ];
 
 export const experience = [
   {
-    period: '2023 — Present',
-    role: 'Senior Full-Stack Developer',
-    company: 'Freelance',
-    summary: 'Building web platforms for startups and agencies — owning architecture, delivery and performance.',
-  },
-  {
-    period: '2022 — 2023',
-    role: 'Full-Stack Developer',
-    company: 'Product Studio',
-    summary: 'Shipped customer-facing dashboards and APIs; introduced a shared component library and CI pipeline.',
+    period: 'Mar 2022 — Present',
+    role: 'Software Engineer',
+    company: 'NDS9 Limited, Dhaka',
+    summary:
+      'Multinational buying house. Developing web applications and providing IT solutions for business operations.',
   },
   {
     period: '2021 — 2022',
-    role: 'Frontend Developer',
-    company: 'Digital Agency',
-    summary: 'Delivered marketing sites and web apps with a focus on accessibility and Core Web Vitals.',
+    role: 'IT Specialist',
+    company: 'Mondol Group, Gazipur',
+    summary: 'Worked in IT support, software maintenance and network management.',
   },
 ];
 
-// Used when the API is unreachable (e.g. static hosting) so the site never renders empty.
+export const education = [
+  { period: '2024', role: 'B.Sc. in Computer Science & Engineering', company: 'Uttara University' },
+  { period: '2020', role: 'Diploma in Computer Engineering', company: 'Sherpur Polytechnic Institute' },
+  { period: '2016', role: 'Secondary School Certificate (S.S.C.)', company: 'Sreepur Kumaria High School' },
+];
+
+// Mirrors backend/app/data.py; used when the API is unreachable (e.g. static hosting).
 export const fallbackProjects = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=70',
-    title: 'E-commerce Platform',
-    category: 'Full-Stack',
-    description: 'Modern e-commerce solution with cart, checkout and Stripe payments, built for speed and conversion.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    year: '2024',
+    title: 'AIHR BD',
+    category: 'SaaS',
+    description:
+      'HR & Payroll SaaS for Bangladesh — multi-tenant HRM with attendance, payroll, leave, performance tracking, and mobile-billing integration.',
+    tags: ['HRM', 'Payroll', 'Multi-tenant'],
+    image: '/projects/aihrbd.jpg',
+    url: 'https://aihrbd.com',
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=70',
-    title: 'Analytics Dashboard',
-    category: 'Frontend',
-    description: 'Real-time analytics dashboard with interactive charts, filters and exportable reports.',
-    technologies: ['Vue.js', 'D3.js', 'Python', 'PostgreSQL'],
-    year: '2024',
+    title: 'LoveGen',
+    category: 'E-commerce',
+    description:
+      'Denim and fashion e-commerce platform built for a modern lifestyle brand offering durable, comfortable clothing.',
+    tags: ['Fashion', 'Storefront'],
+    image: '/projects/lovegen.jpg',
+    url: 'https://lovegen.com',
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=70',
-    title: 'Mobile Banking App',
-    category: 'UI/UX',
-    description: 'Secure, intuitive mobile banking experience with biometric login and spending insights.',
-    technologies: ['React Native', 'TypeScript', 'AWS'],
-    year: '2023',
+    title: 'LVGN',
+    category: 'E-commerce',
+    description:
+      'Premium streetwear and fashion e-commerce store with worldwide shipping, focused on bold expression and quality fabrics.',
+    tags: ['Streetwear', 'Worldwide shipping'],
+    image: '/projects/lvgn.jpg',
+    url: 'https://lvgn.com',
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=70',
-    title: 'API Management System',
-    category: 'Backend',
-    description: 'Scalable API gateway with rate limiting, auth and observability across microservices.',
-    technologies: ['Python', 'FastAPI', 'Docker', 'Kubernetes'],
-    year: '2023',
+    title: 'Dunamiss Cosmetics',
+    category: 'E-commerce',
+    description:
+      'Beauty and cosmetics e-commerce platform for a women-led, purpose-driven brand selling skincare, makeup, and lip-care products.',
+    tags: ['Beauty', 'Storefront'],
+    image: '/projects/dunamiss.jpg',
+    url: 'https://dunamiss.in',
   },
   {
     id: 5,
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=70',
-    title: 'AI Content Platform',
-    category: 'Full-Stack',
-    description: 'AI-powered content generation and management platform with team workflows.',
-    technologies: ['Next.js', 'LLM APIs', 'Supabase', 'Vercel'],
-    year: '2024',
+    title: 'Dunacare',
+    category: 'Web App',
+    description:
+      'Healthcare and wellness platform focused on accessible care, appointments, and patient-centric services.',
+    tags: ['Healthcare', 'Appointments'],
+    image: null,
+    url: null,
   },
   {
     id: 6,
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=70',
-    title: 'Healthcare Management',
-    category: 'Backend',
-    description: 'Patient records, scheduling and billing system designed for reliability and compliance.',
-    technologies: ['Angular', 'Spring Boot', 'MySQL', 'Redis'],
-    year: '2023',
+    title: 'NDS9',
+    category: 'Website',
+    description: 'Modern technology solutions and digital product studio delivering scalable web experiences.',
+    tags: ['Corporate site'],
+    image: '/projects/nds9.jpg',
+    url: 'https://nds9.co',
+  },
+  {
+    id: 7,
+    title: 'Fabriq ERP',
+    category: 'Enterprise',
+    description:
+      'ERP solution for garment and textile manufacturing — covers production planning, inventory, purchase, sales, accounts, and real-time factory dashboards.',
+    tags: ['ERP', 'Manufacturing', 'Dashboards'],
+    image: null,
+    url: null,
+  },
+  {
+    id: 8,
+    title: 'BD Income Tax Calculator',
+    category: 'Web App',
+    description:
+      'Bangladesh income tax estimation tool with step-by-step inputs, slab-based calculations, and downloadable tax summary for salaried individuals.',
+    tags: ['Finance', 'Bangla UI'],
+    image: '/projects/bd-income-tax.jpg',
+    url: 'https://bd-income-tax-calculator.vercel.app/',
+  },
+  {
+    id: 9,
+    title: 'Islamic Diary',
+    category: 'Web App',
+    description:
+      'Daily Islamic journaling app with prayer tracking, Quran reading goals, hadith reminders, and personal spiritual notes in a clean interface.',
+    tags: ['Lifestyle', 'Bangla UI'],
+    image: '/projects/islamic-diary.jpg',
+    url: 'https://islamic-diary.vercel.app/',
+  },
+  {
+    id: 10,
+    title: 'Insights Work',
+    category: 'SaaS',
+    description:
+      'Business analytics dashboard that turns raw data into actionable insights with charts, KPI cards, and exportable reports for small teams.',
+    tags: ['Analytics', 'Dashboards'],
+    image: '/projects/insights-work.jpg',
+    url: 'https://insights-work.vercel.app/',
   },
 ];

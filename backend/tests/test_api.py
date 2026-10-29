@@ -19,7 +19,7 @@ def test_projects_list(client):
     assert res.status_code == 200
     projects = res.get_json()["projects"]
     assert len(projects) > 0
-    assert {"id", "title", "category", "technologies"} <= projects[0].keys()
+    assert {"id", "title", "category", "tags"} <= projects[0].keys()
 
 
 def test_project_detail(client):
