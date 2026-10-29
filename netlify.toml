@@ -1,12 +1,11 @@
+# Static frontend deploy. The Flask API is not run on Netlify; the site falls back
+# to bundled project data. Set VITE_API_URL to a hosted API to enable the contact form.
 [build]
   base = "frontend"
   command = "npm run build"
   publish = "dist"
 
-[functions]
-  directory = "backend"
-
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/handler/:splat"
+  from = "/*"
+  to = "/index.html"
   status = 200

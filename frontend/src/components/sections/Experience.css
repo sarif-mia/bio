@@ -1,0 +1,64 @@
+.experience-container {
+  max-width: 820px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 32px;
+  list-style: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 7px;
+  width: 2px;
+  background: linear-gradient(var(--accent), var(--accent-2), transparent);
+  opacity: 0.5;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 6px;
+  left: -32px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.timeline-period {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.timeline-item h3 {
+  margin: 6px 0 8px;
+  font-size: 1.35rem;
+}
+
+.timeline-item h3 span {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.timeline-item p {
+  color: var(--text-muted);
+}

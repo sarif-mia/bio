@@ -1,22 +1,20 @@
 {
-  "name": "3d-portfolio",
-  "version": "1.0.0",
-  "description": "A modern 3D portfolio website",
-  "main": "src/main.jsx",
+  "name": "bio-portfolio-frontend",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Personal portfolio frontend built with React and Vite",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^9.84.4",
-    "@react-three/fiber": "^8.14.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "three": "^0.156.1",
-    "vite": "^4.4.5"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.7.0"
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
   }
 }

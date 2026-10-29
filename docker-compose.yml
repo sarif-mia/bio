@@ -1,25 +1,24 @@
-version: "3.8"
 services:
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    build: ./backend
     container_name: bio-backend
+    environment:
+      - CORS_ORIGINS=*
     ports:
       - "5000:5000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
     restart: unless-stopped
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    build: ./frontend
     container_name: bio-frontend
     ports:
       - "3000:80"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     restart: unless-stopped
-
-networks:
-  default:
-    driver: bridge

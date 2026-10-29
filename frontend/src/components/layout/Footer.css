@@ -1,0 +1,132 @@
+.footer {
+  padding: 96px 0 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 32px;
+  margin-bottom: 72px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  background:
+    radial-gradient(600px 220px at 50% 0%, var(--accent-soft), transparent 70%),
+    var(--surface);
+  border: 1px solid var(--border);
+}
+
+.footer-cta h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.footer-cta p {
+  margin: 12px 0 28px;
+  color: var(--text-muted);
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.footer-brand p {
+  max-width: 340px;
+  margin-top: 16px;
+  color: var(--text-muted);
+}
+
+.footer-col h3 {
+  margin-bottom: 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.footer-col li + li {
+  margin-top: 10px;
+}
+
+.footer-col a {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  overflow-wrap: anywhere;
+}
+
+.footer-col a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-subtle);
+}
+
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 10px 30px -8px var(--accent);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s var(--ease), visibility 0.3s;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-cta {
+    padding: 40px 20px;
+  }
+
+  .scroll-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}

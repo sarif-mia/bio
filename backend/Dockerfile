@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 5000
 
 # run using gunicorn for production
-CMD ["gunicorn", "-w", "2", "-k", "gthread", "-b", "0.0.0.0:5000", "api.index:app"]
+CMD ["gunicorn", "-w", "2", "-k", "gthread", "-b", "0.0.0.0:5000", "wsgi:app"]

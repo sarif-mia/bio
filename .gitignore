@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+build/
+.vite/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Env & editor
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode/
+.idea/
+*.log
